@@ -57,26 +57,26 @@ options(
 ///|
 fn main {
   let app = @admiral.cli(
-    name="flare",
+    name="witmate",
     version="0.1.0",
-    description="Flare - 自我进化的个人 Agent 协调器",
+    description="WitMate - 自我进化的个人 Agent 协调器",
     commands=[
       // start 命令
       @admiral.command(
         name="start",
-        description="启动 Flare 服务",
+        description="启动 WitMate 服务",
         options=[
           @admiral.int("port", short='p', description="服务器端口", default=Some(8080)),
           @admiral.bool("verbose", short='v', description="详细输出"),
         ],
-        examples=["flare start -p 3000", "flare start --verbose"],
+        examples=["witmate start -p 3000", "witmate start --verbose"],
         run=Some(fn(ctx) {
           let port = match ctx.get_int("port") { Some(n) => n; None => 8080 }
           let verbose = ctx.get_bool("verbose")
           if verbose {
-            println("Starting Flare server on port " + port.to_string())
+            println("Starting WitMate server on port " + port.to_string())
           }
-          println("Flare server started on :8080")
+          println("WitMate server started on :8080")
         }),
       ),
 
@@ -114,7 +114,7 @@ fn main {
         description="查看服务状态",
         options=[],
         run=Some(fn(ctx) {
-          println("Flare Status:")
+          println("WitMate Status:")
           println("  Server: Not running")
           println("  Memory: 0 files")
         }),
@@ -128,24 +128,24 @@ fn main {
 ### 运行效果
 ```bash
 # 显示帮助
-$ flare --help
-Usage: flare [command]
+$ witmate --help
+Usage: witmate [command]
 
-Flare - 自我进化的个人 Agent 协调器
+WitMate - 自我进化的个人 Agent 协调器
 
 Commands:
-  start   启动 Flare 服务
+  start   启动 WitMate 服务
   chat    进入交互式对话
   dream   触发 Dream 整合机制
   status  查看服务状态
 
 # 启动服务器
-$ flare start -p 3000 --verbose
-Starting Flare server on port 3000
-Flare server started on :8080
+$ witmate start -p 3000 --verbose
+Starting WitMate server on port 3000
+WitMate server started on :8080
 
 # 进入对话
-$ flare chat -m claude-opus --stream
+$ witmate chat -m claude-opus --stream
 Entering chat mode with model: claude-opus
 Stream output enabled
 ```
@@ -263,9 +263,9 @@ moon add mizchi/admiral
 
 ---
 
-## Flare CLI 推荐实现
+## WitMate CLI 推荐实现
 
-基于 Admiral 框架实现 Flare CLI：
+基于 Admiral 框架实现 WitMate CLI：
 
 ```moonbit
 // 完整代码见本目录 cmd/main/main.mbt
@@ -273,7 +273,7 @@ moon add mizchi/admiral
 
 ### 命令设计
 ```
-flare
+witmate
 ├── start [-p PORT] [-v]     # 启动服务
 ├── chat [-m MODEL] [-s]     # 对话模式
 ├── dream [-f]               # Dream 整合
@@ -294,4 +294,4 @@ flare
 
 ---
 
-**结论**: **Admiral 是 MoonBit 生态中目前最好用的 CLI 框架**，推荐作为 Flare CLI 的首选实现方案。
+**结论**: **Admiral 是 MoonBit 生态中目前最好用的 CLI 框架**，推荐作为 WitMate CLI 的首选实现方案。

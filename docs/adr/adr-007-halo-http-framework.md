@@ -8,7 +8,7 @@
 
 ## 背景
 
-Flare 需要一个 HTTP Web 框架来实现：
+WitMate 需要一个 HTTP Web 框架来实现：
 - HTTP 服务器（监听端口、处理请求）
 - 路由系统（URL 路径 → handler）
 - 中间件（日志、错误处理、CORS 等）

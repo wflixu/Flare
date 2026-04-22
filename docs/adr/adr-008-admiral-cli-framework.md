@@ -8,7 +8,7 @@
 
 ## 背景
 
-Flare 需要一个 CLI 框架来实现用户交互：
+WitMate 需要一个 CLI 框架来实现用户交互：
 - 命令解析（start, chat, dream, status 等）
 - 参数解析（-p PORT, -m MODEL, --verbose 等）
 - 帮助信息自动生成
@@ -45,13 +45,13 @@ import {
 }
 
 let app = @admiral.cli(
-  name="flare",
+  name="witmate",
   version="0.1.0",
-  description="Flare - 自我进化的个人 Agent 协调器",
+  description="WitMate - 自我进化的个人 Agent 协调器",
   commands=[
     @admiral.command(
       name="start",
-      description="启动 Flare 服务",
+      description="启动 WitMate 服务",
       options=[
         @admiral.int("port", short='p', description="服务器端口", default=Some(8080)),
         @admiral.bool("verbose", short='v', description="详细输出"),
@@ -59,7 +59,7 @@ let app = @admiral.cli(
       run=Some(fn(ctx) {
         let port = match ctx.get_int("port") { Some(n) => n; None => 8080 }
         let verbose = ctx.get_bool("verbose")
-        println("Starting Flare server on port " + port.to_string())
+        println("Starting WitMate server on port " + port.to_string())
       }),
     ),
     @admiral.command(
@@ -92,18 +92,18 @@ try { app.run() } catch { err => println(err) }
 ### 运行效果
 
 ```bash
-$ flare --help
-Usage: flare [command]
+$ witmate --help
+Usage: witmate [command]
 
-Flare - 自我进化的个人 Agent 协调器
+WitMate - 自我进化的个人 Agent 协调器
 
 Commands:
-  start   启动 Flare 服务
+  start   启动 WitMate 服务
   chat    进入交互式对话
   dream   触发 Dream 整合机制
 
-$ flare start -p 3000 --verbose
-Starting Flare server on port 3000
+$ witmate start -p 3000 --verbose
+Starting WitMate server on port 3000
 ```
 
 ---
@@ -143,7 +143,7 @@ Starting Flare server on port 3000
 ## 命令设计
 
 ```
-flare
+witmate
 ├── start [-p PORT] [-v]         # 启动服务
 ├── chat [-m MODEL] [-s]         # 对话模式
 ├── dream [-f]                   # Dream 整合

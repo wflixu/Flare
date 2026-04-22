@@ -15,11 +15,11 @@ fn create_json_object() -> Unit {
   println("=== JSON 序列化验证 ===")
 
   // MoonBit 没有内置 JSON 支持，需要手动构建 JSON 字符串
-  let json_like = "{ \"name\": \"Flare\", \"version\": \"0.1.0\", \"phase\": \"Phase 0\" }"
+  let json_like = "{ \"name\": \"WitMate\", \"version\": \"0.1.0\", \"phase\": \"Phase 0\" }"
   println("生成的 JSON 字符串：" + json_like)
 
   // 嵌套 JSON (简化表示)
-  let nested_json = "{ \"project\": \"Flare\", \"config\": { \"port\": 8080, \"enabled\": true } }"
+  let nested_json = "{ \"project\": \"WitMate\", \"config\": { \"port\": 8080, \"enabled\": true } }"
   println("嵌套 JSON: " + nested_json)
 
   println("[OK] JSON 字符串生成")
@@ -100,7 +100,7 @@ fn test_http_client() -> Unit {
 
 fn main {
   println("╔═══════════════════════════════════════════╗")
-  println("║   Flare Phase 0 技术栈验证                ║")
+  println("║   WitMate Phase 0 技术栈验证                ║")
   println("╚═══════════════════════════════════════════╝")
 
   // 1. JSON 序列化验证

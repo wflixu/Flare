@@ -1,4 +1,4 @@
-# Flare 开发计划
+# WitMate 开发计划
 
 **Status**: Draft
 **Created**: 2026-04-19
@@ -54,7 +54,7 @@ Phase 4 (Dream+ 多 Skill)    │███████████│ 6 周
 ## Phase 0: 技术栈验证（Week 1）
 
 ### 目标
-验证 MoonBit Native 是否具备实现 Flare 核心功能的能力。
+验证 MoonBit Native 是否具备实现 WitMate 核心功能的能力。
 
 ### 验证任务
 
@@ -173,13 +173,13 @@ Phase 4 (Dream+ 多 Skill)    │███████████│ 6 周
 ## Phase 1: MVP 骨架（Week 2-4）
 
 ### 目标
-实现 Flare 核心对话功能，完成单次完整对话。
+实现 WitMate 核心对话功能，完成单次完整对话。
 
 ### 范围
 
 **包含**:
 - MoonBit 项目初始化
-- flare-server 基础骨架
+- witmate-server 基础骨架
 - HTTP Server 实现
 - Anthropic API 适配层
 - 基础对话循环
@@ -221,8 +221,8 @@ Phase 4 (Dream+ 多 Skill)    │███████████│ 6 周
 **T1.1: MoonBit 项目初始化**
 ```bash
 # 目录结构
-flare/
-├── server/           # flare-server 源码
+witmate/
+├── server/           # witmate-server 源码
 │   ├── src/
 │   │   ├── main.moon
 │   │   ├── config.moon
@@ -230,14 +230,14 @@ flare/
 │   │   └── api/
 │   │       └── anthropic.moon
 │   └── moon.pkg.json
-├── cli/              # flare-cli 源码（Phase 2）
-├── web/              # flare-web 源码（Phase 2）
+├── cli/              # witmate-cli 源码（Phase 2）
+├── web/              # witmate-web 源码（Phase 2）
 └── specs/            # 规格文档
 ```
 
 **T1.2: 配置文件加载器**
 ```json
-// ~/.flare/config.json
+// ~/.witmate/config.json
 {
   "llm": {
     "default_provider": "anthropic",
@@ -275,7 +275,7 @@ flare/
 ### 验收标准
 
 - [ ] 运行 `moon build` 无错误
-- [ ] 运行 `flare-server` 启动成功
+- [ ] 运行 `witmate-server` 启动成功
 - [ ] 监听端口 3000（可配置）
 - [ ] POST /chat 返回 Claude 响应
 - [ ] 错误处理正确
@@ -283,8 +283,8 @@ flare/
 
 ### 交付物
 
-- [ ] `server/` - flare-server 源码
-- [ ] `~/.flare/config.json` - 配置文件格式
+- [ ] `server/` - witmate-server 源码
+- [ ] `~/.witmate/config.json` - 配置文件格式
 - [ ] `docs/api.md` - API 文档
 - [ ] `test/` - 集成测试
 
@@ -298,8 +298,8 @@ flare/
 ### 范围
 
 **包含**:
-- flare-cli 实现
-- flare-web 骨架
+- witmate-cli 实现
+- witmate-web 骨架
 - Capability 抽象接口
 - Skill 发现机制
 - MCP 进程池基础
@@ -318,8 +318,8 @@ flare/
 | T2.2 | MCPCapability 实现 | W6 | Server Team | T2.1 |
 | T2.3 | MCP 进程池骨架 (空闲进程获取/归还) | W6 | Server Team | T2.2 |
 | T2.4 | MCP 进程生命周期管理 (spawn/cleanup) | W7 | Server Team | T2.3 |
-| T2.5 | flare-cli 实现 | W5-W6 | CLI Team | T2.1 |
-| T2.6 | flare-web 骨架 | W6-W7 | Frontend Team | T2.1 |
+| T2.5 | witmate-cli 实现 | W5-W6 | CLI Team | T2.1 |
+| T2.6 | witmate-web 骨架 | W6-W7 | Frontend Team | T2.1 |
 | T2.7 | Skill 发现机制 | W7 | Server Team | T2.1 |
 | T2.8 | 文件锁机制实现 | W7 | Server Team | T2.1 |
 | T2.9 | 安全边界检查框架 | W7 | Server Team | T2.1 |
@@ -405,8 +405,8 @@ struct MCPProcessPool {
 
 - [ ] `server/src/capability/` - Capability 实现
 - [ ] `server/src/mcp/pool.moon` - MCP 进程池
-- [ ] `cli/` - flare-cli 源码
-- [ ] `web/` - flare-web 源码
+- [ ] `cli/` - witmate-cli 源码
+- [ ] `web/` - witmate-web 源码
 - [ ] `skills/` - Skill 定义示例
 - [ ] `docs/skill-format.md` - Skill 格式文档
 - [ ] `docs/memory-index-design.md` - 记忆索引设计
@@ -484,8 +484,8 @@ struct MCPProcessPool {
 
 - [ ] `server/src/memory/` - 记忆系统源码
 - [ ] `server/src/provider/` - 多 Provider 适配
-- [ ] `~/.flare/memory/` - 记忆文件目录
-- [ ] `~/.flare/memory-index.json` - 记忆索引
+- [ ] `~/.witmate/memory/` - 记忆文件目录
+- [ ] `~/.witmate/memory-index.json` - 记忆索引
 - [ ] `test/memory/` - 记忆系统测试
 - [ ] `docs/performance-report.md` - 性能报告
 
@@ -594,7 +594,7 @@ struct MCPProcessPool {
 
 | 方式 | 条件 | 优先级 |
 |------|------|--------|
-| 主动触发 | `flare dream` 命令 | P0 |
+| 主动触发 | `witmate dream` 命令 | P0 |
 | 条件触发 | 记忆 > 500 或会话 > 50 | P1 |
 | 定时触发 | 每日 2:00 或闲置 30min | P2 |
 
@@ -637,8 +637,8 @@ struct MCPProcessPool {
 ### 交付物
 
 - [ ] `server/src/dream/` - Dream Engine 源码
-- [ ] `~/.flare/dream-backup/` - Dream 备份目录
-- [ ] `~/.flare/evolution-rules.json` - 进化规则
+- [ ] `~/.witmate/dream-backup/` - Dream 备份目录
+- [ ] `~/.witmate/evolution-rules.json` - 进化规则
 - [ ] `obsidian-plugin/` - Obsidian 插件（可选）
 - [ ] `test/dream/` - Dream 系统测试
 - [ ] `docs/gtm-release-notes.md` - 发布说明
@@ -652,9 +652,9 @@ struct MCPProcessPool {
 | 角色 | 人数 | 职责 |
 |------|------|------|
 | Engineering Lead | 1 | 技术决策、架构评审、Phase 0 验证 |
-| Server Team | 2-3 | flare-server 开发 |
-| CLI Team | 1 | flare-cli 开发 |
-| Frontend Team | 1-2 | flare-web 和 Obsidian 插件 |
+| Server Team | 2-3 | witmate-server 开发 |
+| CLI Team | 1 | witmate-cli 开发 |
+| Frontend Team | 1-2 | witmate-web 和 Obsidian 插件 |
 | QA Team | 1 | 测试计划、性能验证 |
 | Architect | 1 | 系统设计、ADR 维护 |
 | Product Manager | 1 | 产品方向、用户验证、GTM |

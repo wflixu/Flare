@@ -1,29 +1,29 @@
-// Flare CLI - 使用 Admiral 框架
+// WitMate CLI - 使用 Admiral 框架
 // MoonBit 生态中最好用的 CLI 框架示例
 
 ///|
 fn main {
   let app = @admiral.cli(
-    name="flare",
+    name="witmate",
     version="0.1.0",
-    description="Flare - 自我进化的个人 Agent 协调器",
+    description="WitMate - 自我进化的个人 Agent 协调器",
     commands=[
       // start 命令
       @admiral.command(
         name="start",
-        description="启动 Flare 服务",
+        description="启动 WitMate 服务",
         options=[
           @admiral.int("port", short='p', description="服务器端口", default=Some(8080)),
           @admiral.bool("verbose", short='v', description="详细输出"),
         ],
-        examples=["flare start -p 3000", "flare start --verbose"],
+        examples=["witmate start -p 3000", "witmate start --verbose"],
         run=Some(fn(ctx) {
           let port = match ctx.get_int("port") { Some(n) => n; None => 8080 }
           let verbose = ctx.get_bool("verbose")
           if verbose {
-            println("Starting Flare server on port " + port.to_string())
+            println("Starting WitMate server on port " + port.to_string())
           }
-          println("Flare server started on :8080")
+          println("WitMate server started on :8080")
         }),
       ),
 
@@ -35,7 +35,7 @@ fn main {
           @admiral.string("model", short='m', description="LLM 模型", default=Some("claude-sonnet-4")),
           @admiral.bool("stream", short='s', description="流式输出"),
         ],
-        examples=["flare chat -m claude-opus", "flare chat --stream"],
+        examples=["witmate chat -m claude-opus", "witmate chat --stream"],
         run=Some(fn(ctx) {
           let model = match ctx.get_string("model") { Some(m) => m; None => "claude-sonnet-4" }
           let stream = ctx.get_bool("stream")
@@ -54,7 +54,7 @@ fn main {
         options=[
           @admiral.bool("force", short='f', description="强制整合"),
         ],
-        examples=["flare dream -f"],
+        examples=["witmate dream -f"],
         run=Some(fn(ctx) {
           let force = ctx.get_bool("force")
           if force {
@@ -72,7 +72,7 @@ fn main {
         description="查看服务状态",
         options=[],
         run=Some(fn(ctx) {
-          println("Flare Status:")
+          println("WitMate Status:")
           println("  Server: Not running")
           println("  Memory: 0 files")
           println("  Skills: 0 loaded")

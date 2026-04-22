@@ -1,4 +1,4 @@
-// Flare Server - HTTP Server using Halo Framework
+// WitMate Server - HTTP Server using Halo Framework
 // Phase 0: 技术验证 - 真实 HTTP 服务器
 
 ///|
@@ -14,13 +14,13 @@ fn main {
     // 健康检查
     .get("/health", fn(ctx, _) {
       ctx.set_status(200)
-      ignore(ctx.set_body("{\"status\": \"healthy\", \"service\": \"Flare\"}"))
+      ignore(ctx.set_body("{\"status\": \"healthy\", \"service\": \"WitMate\"}"))
     })
 
     // 服务器状态
     .get("/status", fn(ctx, _) {
       ctx.set_status(200)
-      ignore(ctx.set_body("{\"server\": \"Flare\", \"version\": \"0.1.0\", \"phase\": \"Phase 0\"}"))
+      ignore(ctx.set_body("{\"server\": \"WitMate\", \"version\": \"0.1.0\", \"phase\": \"Phase 0\"}"))
     })
 
     // API 测试端点
@@ -38,7 +38,7 @@ fn main {
     // 默认路由
     .get("/", fn(ctx, _) {
       ctx.set_status(200)
-      ignore(ctx.set_body("{\"message\": \"Welcome to Flare Server\", \"docs\": \"/health\"}"))
+      ignore(ctx.set_body("{\"message\": \"Welcome to WitMate Server\", \"docs\": \"/health\"}"))
     })
 
     // 404 处理
@@ -53,7 +53,7 @@ fn main {
   // 启动服务器
   println("")
   println("╔════════════════════════════════════════════════╗")
-  println("║   Flare Server v0.1.0                          ║")
+  println("║   WitMate Server v0.1.0                          ║")
   println("║   Phase 0 - HTTP Server Validation             ║")
   println("╚════════════════════════════════════════════════╝")
   println("")

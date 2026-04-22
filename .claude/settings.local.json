@@ -22,7 +22,9 @@
       "WebFetch(domain:docs.moonbitlang.com)",
       "Bash(curl -s \"https://mooncakes.io/api/search?q=cli\")",
       "Bash(curl -s \"https://mooncakes.io/api/search?q=argparse\"、)",
-      "Bash(curl -s \"https://mooncakes.io/search?q=argparse\")"
+      "Bash(curl -s \"https://mooncakes.io/search?q=argparse\")",
+      "Read(//Users/lixu/code/**)",
+      "Bash(mv Flare WitMate)"
     ]
   }
 }

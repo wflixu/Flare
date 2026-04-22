@@ -1,5 +1,5 @@
 {
-  "name": "flare/phase0_validation",
+  "name": "witmate/phase0_validation",
   "version": "0.1.0",
   "deps": {
     "wflixu/Halo": "0.5.1"
@@ -11,5 +11,5 @@
     "phase0",
     "validation"
   ],
-  "description": "Phase 0 Technology Stack Validation for Flare"
+  "description": "Phase 0 Technology Stack Validation for WitMate"
 }
