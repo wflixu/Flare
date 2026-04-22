@@ -1,0 +1,15 @@
+{
+  "name": "flare/phase0_validation",
+  "version": "0.1.0",
+  "deps": {
+    "wflixu/Halo": "0.5.1"
+  },
+  "readme": "README.md",
+  "license": "MIT",
+  "keywords": [
+    "moonbit",
+    "phase0",
+    "validation"
+  ],
+  "description": "Phase 0 Technology Stack Validation for Flare"
+}

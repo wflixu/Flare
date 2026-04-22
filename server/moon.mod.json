@@ -1,0 +1,12 @@
+{
+  "name": "wflixu/server",
+  "version": "0.1.0",
+  "deps": {
+    "wflixu/Halo": "0.5.1"
+  },
+  "readme": "README.mbt.md",
+  "repository": "",
+  "license": "Apache-2.0",
+  "keywords": [],
+  "description": ""
+}

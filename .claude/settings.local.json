@@ -1,7 +1,28 @@
 {
   "permissions": {
     "allow": [
-      "Bash(obsidian read:*)"
+      "Bash(obsidian read:*)",
+      "Bash(moon --help)",
+      "Bash(moon new:*)",
+      "Bash(moon search:*)",
+      "WebSearch",
+      "WebFetch(domain:www.moonbitlang.com)",
+      "WebFetch(domain:github.com)",
+      "Bash(moon install:*)",
+      "Bash(moon build:*)",
+      "Bash(moon run:*)",
+      "Bash(moon add:*)",
+      "Bash(unzip -l ~/.moon/registry/cache/moonbitlang/async/0.18.0.zip)",
+      "Bash(unzip -p ~/.moon/registry/cache/moonbitlang/async/0.18.0.zip src/http/README.mbt.md)",
+      "Bash(unzip:*)",
+      "WebFetch(domain:mooncakes.io)",
+      "Bash(curl -s http://localhost:8080/health)",
+      "Bash(curl -s http://localhost:8080/status)",
+      "Bash(curl -s http://localhost:8080/)",
+      "WebFetch(domain:docs.moonbitlang.com)",
+      "Bash(curl -s \"https://mooncakes.io/api/search?q=cli\")",
+      "Bash(curl -s \"https://mooncakes.io/api/search?q=argparse\"、)",
+      "Bash(curl -s \"https://mooncakes.io/search?q=argparse\")"
     ]
   }
 }

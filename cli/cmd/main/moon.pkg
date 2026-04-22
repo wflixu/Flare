@@ -1,0 +1,7 @@
+import {
+  "mizchi/admiral",
+}
+
+options(
+  "is-main": true,
+)

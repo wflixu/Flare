@@ -86,13 +86,13 @@ flare/
 
 | 组件 | 技术 |
 |------|------|
-| 后端 | MoonBit Native (Phase 0 验证中) |
+| 后端 | MoonBit Native + Halo (wflixu/Halo v0.5.1) |
 | 前端 | Vue3 + Vite |
-| CLI | MoonBit Native + argparse |
+| CLI | MoonBit Native + Admiral (mizchi/admiral v0.1.0) |
 | 存储 | 本地 qmd 文件 + JSON 索引 |
 | LLM | Anthropic Claude (默认), Qwen, GLM |
 
-**备选方案**: 如 MoonBit 验证失败，切换到 Go 或 Rust
+**技术选型**: MoonBit 已通过 Phase 0 验证，无需备选方案
 
 ---
 
@@ -143,6 +143,8 @@ moon test
 | ADR-004 | 本地优先存储 | Accepted |
 | ADR-005 | HTTP 双向通信 (废弃 SSE) | Accepted |
 | ADR-006 | Dream Engine 分阶段实现 | Accepted |
+| ADR-007 | 采用 Halo 作为 HTTP Web 框架 | Accepted |
+| ADR-008 | 采用 Admiral 作为 CLI 框架 | Accepted |
 
 ---
 
